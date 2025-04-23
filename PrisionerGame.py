@@ -8,3 +8,16 @@ class PrisionersGame:
         shuffled = self.drawer_ids[:]
         random.shuffle(shuffled)
         self.drawers = dict(zip(self.drawer_ids, shuffled))
+
+
+    def play_naive_mem(self, player_number):
+        """ Randomly open drawers but avoiding repetitions """
+        not_attemped = self.drawer_ids[:]
+        for attempt in range(self.max_attempts):
+            guess = random.choice(not_attemped)
+            not_attemped.remove(guess)
+
+            if self.drawers[guess] == player_number:
+                return True
+
+        return False        
