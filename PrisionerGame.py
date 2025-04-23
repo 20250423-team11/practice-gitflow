@@ -8,3 +8,9 @@ class PrisionersGame:
         shuffled = self.drawer_ids[:]
         random.shuffle(shuffled)
         self.drawers = dict(zip(self.drawer_ids, shuffled))
+
+    
+    @classmethod
+    def victory(csl, results):
+        """Defines a victory of a game: all players won"""
+        return all(results)
