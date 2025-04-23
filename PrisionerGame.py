@@ -8,3 +8,13 @@ class PrisionersGame:
         shuffled = self.drawer_ids[:]
         random.shuffle(shuffled)
         self.drawers = dict(zip(self.drawer_ids, shuffled))
+
+# by 광영
+#
+def play_naive(self, player_number):
+        """ Randomly open drawers """
+        for attempt in range(self.max_attempts):
+            if self.drawers[random.choice(self.drawer_ids)] == player_number:
+                return True
+
+    return False
