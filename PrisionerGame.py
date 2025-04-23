@@ -23,3 +23,13 @@ class PrisionersGame:
                 prev_attempt = self.drawers[prev_attempt]
 
         return False
+    
+    @classmethod
+    def victory(csl, results):
+        """Defines a victory of a game: all players won"""
+        return all(results)
+
+    def play(self, approach):
+        """Plays this game and returns a list of booleans with
+        True if a player one, False otherwise"""
+        return [approach(self, player) for player in self.drawer_ids]
