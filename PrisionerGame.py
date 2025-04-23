@@ -10,7 +10,7 @@ class PrisionersGame:
         self.drawers = dict(zip(self.drawer_ids, shuffled))
 
 
-        # 웅비님
+        # 웅비님(수종본)
     def play_optimum(self, player_number):
         """ Open the drawer that matches the player number and then open the drawer
         with the revealed number.
